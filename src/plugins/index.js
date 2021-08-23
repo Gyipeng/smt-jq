@@ -14,32 +14,30 @@ class SmtJq {
   }
 
   init(opt) {
-    let {className}=opt
+    let {className,keys}=opt
     let def = {
       dom: document.querySelector(className),
-      option: {
-        title: {
-          text: '第一个 ECharts 实例'
-        },
-        tooltip: {},
-        legend: {
-          data: ['销量']
-        },
-        xAxis: {
-          data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
-        },
-        yAxis: {},
-        series: [{
-          name: '销量',
-          type: 'bar',
-          data: [5, 20, 36, 10, 10, 20]
-        }]
-      },
+      option: {},
     };
     this.def = this.extend(def, opt, true); //配置参数
     this.dom = this.def.dom
-    this.option = this.def.option
+    this.option =this.getOption(this.def.option,keys)
     this.chart = echarts.init(this.dom)
+  }
+
+  getOption(option, keys) {
+    let NewOption = {
+      title: {
+        text: keys
+      },
+      series: [{
+        name: '农产品',
+        type: 'pie',
+        radius: '50%',
+        data: option.data
+      }]
+    }
+    return NewOption
   }
 
   render() {

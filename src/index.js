@@ -5,12 +5,12 @@ class SmtJq {
   }
 
   init(opt) {
-
+    this.dom=document.querySelector(opt.className)
   }
 
 
   render() {
-    return 123
+    return this.dom.appendChild("123")
   }
 }
 

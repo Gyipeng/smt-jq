@@ -34,7 +34,10 @@ class SmtJq {
         name: '农产品',
         type: 'pie',
         radius: '50%',
-        data: option.data
+        data: option.data,
+        itemStyle: {
+          color: "green"
+        }
       }]
     }
     return NewOption

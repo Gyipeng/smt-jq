@@ -11,7 +11,11 @@
     "deploy": "node ./deploy"
   },
   "dependencies": {
-    "vue": "^2.5.11"
+    "vue": "^2.5.11",
+    "compressing": "^1.5.1",
+    "needle": "^2.8.0",
+    "ini": "^2.0.0"
+
   },
   "browserslist": [
     "> 1%",

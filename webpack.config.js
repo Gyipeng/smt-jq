@@ -1,14 +1,16 @@
 var path = require('path')
 var webpack = require('webpack')
 
+let filenames =process.cwd().split("/")
+let filename=filenames[filenames.length-1]
 module.exports = {
-  entry: './src/plugins/index.js',
+  entry: './src/index.js',
   // entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'smt-jq.js',
-    library: "smt-jq",
+    filename:`${filename}.js`,
+    library: filename,
     libraryTarget: "umd",
     umdNamedDefine: true
   },
